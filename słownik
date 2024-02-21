@@ -1,0 +1,86 @@
+uczen = {
+    'imie': 'Bartek',
+    'nazwisko': 'Zieliński',
+    'wiek': 15,
+    'matematyka': [1, 1, 2, 3, 3, 4],
+    'angielski': [3, 3, 4, 5, 6, 4],
+    'polski': [1, 3, 2, 1]
+}
+
+def inf(dc):
+    for k, v in dc.items():
+        print(f"{k}:  {v}")
+
+def srednie(dc):
+    srednia_m = sum(dc['matematyka']) / len(dc['matematyka'])
+    print(f"Matematyka srednia {srednia_m}")
+    srednia_m = sum(dc['angielski']) / len(dc['angielski'])
+    print(f"Angielski srednia {srednia_m}")
+    srednia_m = sum(dc['polski']) / len(dc['polski'])
+    print(f"Polski srednia {srednia_m}")
+
+def edycja(dc):
+    print("co chcesz edytować")
+    print("-" * 15)
+    inf(dc)
+    print("-" * 15)
+    inp = input()
+    dc[inp] = input("Wpisz nowe dane")
+
+
+def edycja_listy(lst):
+    while True:
+        print(lst)
+        print('+ - dodaj element')
+        print('- - usun element')
+        print('w - wyjdz z edycji list')
+        inp = input()
+        if '+' == inp:
+            ocena = float(input())
+            lst.append(ocena)
+            print('ocena dodana')
+        elif '-' == inp:
+            ocena = float(input())
+            lst.remove(ocena)
+            print('ocena usunieta')
+        elif 'w' == inp:
+            break
+        else:
+            print("Nie można tego zrobić")
+
+def dodaj_nowe_oceny(dc):
+    print("Edytuj oceny")
+    print("Matematyka - m")
+    print("Angielski - a")
+    print("Polski - p")
+    inp = input()
+    if inp == 'm':
+        edycja_listy(dc['matematyka'])
+    elif inp == 'a':
+        edycja_listy(dc['angielski'])
+    elif inp == 'p':
+        edycja_listy(dc['polski'])
+    print("dodaj_nowe_oceny - zakonczylo dzialnie")
+
+while True:
+    print("-" * 15)
+    print("e - wyjdź z programu")
+    print("i - informacje")
+    print("s - średnia ocen")
+    print("ed - edytuj informacje")
+    print("oc - edytuj oceny")
+    print("-" * 15)
+    inp = input().lower()
+    if 'e' == inp:
+        break
+    elif 's' == inp:
+        srednie(uczen)
+    elif 'i' == inp:
+        inf(uczen)
+    elif 'ed' == inp:
+        edycja(uczen)
+    elif 'dod' == inp:
+        dodaj_nowe_oceny(uczen)
+    else:
+        print("Program zkonczyl dziłanie")
+        break
