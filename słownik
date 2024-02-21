@@ -1,6 +1,6 @@
 uczen = {
-    'imie': 'Bartek',
-    'nazwisko': 'Zieliński',
+    'imie': 'Adam',
+    'nazwisko': 'Bomboniera',
     'wiek': 15,
     'matematyka': [1, 1, 2, 3, 3, 4],
     'angielski': [3, 3, 4, 5, 6, 4],
