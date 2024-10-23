@@ -1,0 +1,8 @@
+Powidz o 
+CSS Naming Conventions
+Zmiennych
+Mixsinach 
+&__
+&--
+flex: 1;
+gap: 100px;
